@@ -26,15 +26,20 @@ static NSString * const baseURLString = @"https://api.twitter.com";
 }
 
 - (instancetype)init {
+    NSString *path = [[NSBundle mainBundle] pathForResource: @"Keys" ofType: @"plist"];
+         NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
+         
+         NSString *key= [dict objectForKey: @"consumer_Key"];
+         NSString *secret = [dict objectForKey: @"consumer_Secret"];
     
     NSURL *baseURL = [NSURL URLWithString:baseURLString];
     
     // TODO: fix code below to pull API Keys from your new Keys.plist file
     
-    NSString *path = ;
-    NSDictionary *dict = ;
-    NSString *key = ;
-    NSString *secret = ;
+    //NSString *path = ;
+    //NSDictionary *dict = ;
+    //NSString *key = @"X0uGW9s1SIMjcXOZHcmFgThzI" ;
+    //NSString *secret = @"gekObNhdAzYSP6wgPFqq4bz8c7pZJejRGaROectn4CtY3nuGb7" ;
     
     // Check for launch arguments override
     if ([[NSUserDefaults standardUserDefaults] stringForKey:@"consumer-key"]) {
