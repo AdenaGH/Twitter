@@ -84,14 +84,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Logout"/>
                                 <connections>
-                                    <segue destination="c3O-zL-0ZQ" kind="show" id="Bjh-b9-WW9"/>
+                                    <action selector="logoutButtonPress:" destination="Lbl-k5-U4i" eventType="touchUpInside" id="0r7-T2-Qxd"/>
+                                    <segue destination="c3O-zL-0ZQ" kind="show" id="G5I-Hv-Xe7"/>
                                 </connections>
                             </button>
-                            <connections>
-                                <segue destination="c3O-zL-0ZQ" kind="show" id="lyc-e2-hwM"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="logoutButton" destination="cxA-JA-GCa" id="nwk-Gc-CDc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQh-hN-GQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -116,9 +117,6 @@
             <point key="canvasLocation" x="860" y="36.431784107946029"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="lyc-e2-hwM"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="TwitterLogoBlue" width="200" height="200"/>
     </resources>

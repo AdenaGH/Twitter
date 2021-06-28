@@ -12,6 +12,7 @@
 #import "LoginViewController.h"
 
 @interface TimelineViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 
 @end
 
@@ -33,6 +34,14 @@
             NSLog(@"😫😫😫 Error getting home timeline: %@", error.localizedDescription);
         }
     }];
+}
+- (IBAction)logoutButtonPress:(id)sender {
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    appDelegate.window.rootViewController = loginViewController;
+    [[APIManager shared] logout];
 }
 
 -(void)logout{
@@ -57,6 +66,9 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
+//- (IBAction)logoutAction:(id)sender {
+    
+//}
 
 
 
