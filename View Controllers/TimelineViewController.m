@@ -13,7 +13,7 @@
 
 @interface TimelineViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;
-
+//@property (weak, nonatomic) NSArray *arrayOfTweets;
 @end
 
 @implementation TimelineViewController
@@ -33,7 +33,9 @@
         } else {
             NSLog(@"😫😫😫 Error getting home timeline: %@", error.localizedDescription);
         }
+        self.arrayOfTweets = tweets;
     }];
+
 }
 - (IBAction)logoutButtonPress:(id)sender {
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
