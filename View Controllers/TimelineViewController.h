@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface TimelineViewController : UIViewController
-@property (weak, nonatomic) NSArray *arrayOfTweets;
+
+
 @end
