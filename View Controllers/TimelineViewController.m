@@ -14,6 +14,7 @@
 #import "Tweet.h"
 #import "UIImageView+AFNetworking.h"
 #import "ComposeViewController.h"
+#import "DetailViewController.h"
 
 @interface TimelineViewController () <ComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;
@@ -84,33 +85,28 @@
 }
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+// Move around!!
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
     UINavigationController *navigationController = [segue destinationViewController];
         ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
         composeController.delegate = self;
-    
+
+
 }
-//- (IBAction)logoutAction:(id)sender {
-    
-//}
+
 
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TweetCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TweetCell" forIndexPath:indexPath];
     Tweet *tweet = self.arrayOfTweets[indexPath.row];
-    cell.authorLabel.text= [@"@" stringByAppendingString: tweet.user.screenName ];
-    cell.tweetBodyLabel.text =tweet.text;
-    cell.dateLabel.text = tweet.createdAtString;
-    cell.retweetsLabel.text = [NSString stringWithFormat: @"%d",tweet.retweetCount];
-    cell.likesLabel.text = [NSString stringWithFormat: @"%d",tweet.favoriteCount];
+    
     NSString *URLString = tweet.user.profilePicture;
     NSURL *url = [NSURL URLWithString:URLString];
     //NSData *urlData = [NSData dataWithContentsOfURL:url];
     [cell.profImageView setImageWithURL:url];
+
+    [cell updateTweet:tweet];
     
     return cell;
 }
@@ -122,6 +118,7 @@
 -(void)didTweet:(nonnull Tweet *)tweet {
     NSArray<Tweet*> *meTweet = @[tweet];
     self.arrayOfTweets = [meTweet arrayByAddingObjectsFromArray:self.arrayOfTweets];
+    
     [self.tableView reloadData];
 }
 
