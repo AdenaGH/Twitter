@@ -31,4 +31,10 @@
     self.tweetBodyLabel.text = tweet.text;
     
 }
+- (IBAction)didTapFavorite:(id)sender {
+    [self.likesButton setSelected:YES];
+    self.tweet.favorited = YES;
+    self.tweet.favoriteCount +=1;
+}
+
 @end
