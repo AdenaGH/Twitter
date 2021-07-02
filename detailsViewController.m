@@ -1,40 +1,40 @@
 //
-//  TweetCell.m
+//  detailsViewController.m
 //  twitter
 //
-//  Created by Adena Rowana Ninvalle on 6/29/21.
+//  Created by Adena Rowana Ninvalle on 7/1/21.
 //  Copyright © 2021 Emerson Malca. All rights reserved.
 //
 
-#import "TweetCell.h"
-#import "APIManager.h"
-#import "UIImageView+AFNetworking.h"
+#import "detailsViewController.h"
 #import "Tweet.h"
-#import "AppDelegate.h"
-//#import "NSDate+DateTools.h"
+#import "APIManager.h"
 
-@implementation TweetCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
+@interface detailsViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *profImage;
+@property (weak, nonatomic) IBOutlet UILabel *tweetAuthor;
+@property (weak, nonatomic) IBOutlet UILabel *tweetDate;
+@property (weak, nonatomic) IBOutlet UILabel *tweetBody;
+@property (weak, nonatomic) IBOutlet UIButton *retweetButton;
+@property (weak, nonatomic) IBOutlet UILabel *retweetsLabel;
+@property (weak, nonatomic) IBOutlet UIButton *likeButton;
+@property (weak, nonatomic) IBOutlet UILabel *likesLabel;
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+@end
 
-    // Configure the view for the selected state
-}
--(void)updateTweet:(Tweet *)tweet {
-//    self.tweet = [[Tweet alloc] init];
-        self.tweet = tweet;
+@implementation detailsViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
     
-    self.authorLabel.text = [@"@" stringByAppendingString: tweet.user.screenName];
-    self.dateLabel.text = tweet.createdAtString;
-    self.tweetBodyLabel.text = tweet.text;
-    self.likesLabel.text = [NSString stringWithFormat: @"%d",tweet.favoriteCount];
-    self.retweetsLabel.text = [NSString stringWithFormat: @"%d",tweet.retweetCount];
-    
+    self.tweetBody.text = self.tweet.text;
+    NSLog(@"%@", self.tweet.text);
+    self.tweetAuthor.text = self.tweet.user.screenName;
+    self.tweetDate.text = self.tweet.createdAtString;
+    self.likesLabel.text = [NSString stringWithFormat: @"%d",self.tweet.favoriteCount];
+    self.retweetsLabel.text = [NSString stringWithFormat: @"%d",self.tweet.retweetCount];
     
 }
 
@@ -43,7 +43,7 @@
     //[self.likesButton setSelected:YES];
     if (self.tweet.favorited == NO) {
     self.tweet.favorited = YES;
-    [self.likesButton setSelected:YES];
+    [self.likeButton setSelected:YES];
     self.tweet.favoriteCount +=1;
     
     [[APIManager shared] favorite:self.tweet completion:^(Tweet *tweet, NSError *error) {
@@ -55,7 +55,7 @@
             }];
     } else {
         self.tweet.favorited = NO;
-        [self.likesButton setSelected:NO];
+        [self.likeButton setSelected:NO];
         self.tweet.favoriteCount -=1;
         
         [[APIManager shared]unfavorite:self.tweet completion:^(Tweet *tweet, NSError *error) {
@@ -111,5 +111,16 @@
 //    self.likesButton.selected = self.tweet.favorited;
 //    self.retweetButton.selected = self.tweet.retweeted;
 }
+
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

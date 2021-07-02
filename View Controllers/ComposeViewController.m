@@ -30,6 +30,7 @@
             NSLog(@"Bruh moment");
         } else {
             NSLog(@"Success");
+            tweet.text = self.tweetText.text;
             [self.delegate didTweet:tweet];
             [self dismissViewControllerAnimated:true completion:nil];
         }

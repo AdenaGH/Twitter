@@ -1,5 +1,5 @@
 //
-//  DetailViewController.h
+//  detailsViewController.h
 //  twitter
 //
 //  Created by Adena Rowana Ninvalle on 7/1/21.
@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Tweet.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DetailViewController : UIViewController
-@property (nonatomic, strong) NSDictionary *twt;
+@interface detailsViewController : UIViewController
+@property (strong, nonatomic) Tweet *tweet;
+//-(void)updateTweet:(Tweet *)tweet;
 
 @end
 

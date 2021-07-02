@@ -14,7 +14,8 @@
 #import "Tweet.h"
 #import "UIImageView+AFNetworking.h"
 #import "ComposeViewController.h"
-#import "DetailViewController.h"
+#import "detailsViewController.h"
+
 
 @interface TimelineViewController () <ComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;
@@ -87,10 +88,17 @@
 
 // Move around!!
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqual:@"composeSegue"]){
     UINavigationController *navigationController = [segue destinationViewController];
         ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
         composeController.delegate = self;
-
+    }
+    if ([segue.identifier isEqual:@"detailsSegue"]){
+        TweetCell *clickedCell = (TweetCell *)sender;
+        Tweet *clickedTweet = clickedCell.tweet;
+        detailsViewController *viewController = [segue destinationViewController];
+        viewController.tweet = clickedTweet;
+    }
 
 }
 
