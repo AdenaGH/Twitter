@@ -53,7 +53,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-! [] https://github.com/AdenaGH/Twitter/blob/main/ezgif.com-gif-maker%20(1).gif
+! [] (https://github.com/AdenaGH/Twitter/blob/main/ezgif.com-gif-maker%20(1).gif)
 
 GIF created with ez-gif
 
