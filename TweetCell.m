@@ -11,6 +11,7 @@
 #import "UIImageView+AFNetworking.h"
 #import "Tweet.h"
 #import "AppDelegate.h"
+#import "DateTools.h"
 //#import "NSDate+DateTools.h"
 
 @implementation TweetCell
@@ -30,6 +31,7 @@
         self.tweet = tweet;
     
     self.authorLabel.text = [@"@" stringByAppendingString: tweet.user.screenName];
+    NSString * testDate = tweet.createdAtString;
     self.dateLabel.text = tweet.createdAtString;
     self.tweetBodyLabel.text = tweet.text;
     self.likesLabel.text = [NSString stringWithFormat: @"%d",tweet.favoriteCount];
@@ -108,8 +110,7 @@
 -(void) refreshData {
     self.likesLabel.text = [NSString stringWithFormat: @"%d",self.tweet.favoriteCount];
     self.retweetsLabel.text = [NSString stringWithFormat: @"%d",self.tweet.retweetCount];
-//    self.likesButton.selected = self.tweet.favorited;
-//    self.retweetButton.selected = self.tweet.retweeted;
+
 }
 
 @end

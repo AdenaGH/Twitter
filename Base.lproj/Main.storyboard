@@ -358,6 +358,7 @@
                             <constraint firstItem="cVO-CM-ldS" firstAttribute="leading" secondItem="eoY-z2-Q1b" secondAttribute="trailing" constant="5" id="FyI-pA-lmt"/>
                             <constraint firstItem="Zf5-w4-nOR" firstAttribute="top" secondItem="eoY-z2-Q1b" secondAttribute="top" id="GWh-1b-Vhi"/>
                             <constraint firstItem="Vmq-Ud-2aB" firstAttribute="centerY" secondItem="Nya-NJ-Vad" secondAttribute="centerY" id="HxP-0O-ypV"/>
+                            <constraint firstItem="cVO-CM-ldS" firstAttribute="top" secondItem="Zf5-w4-nOR" secondAttribute="bottom" constant="9" id="J1d-uG-cLt"/>
                             <constraint firstItem="Kl4-bt-kVW" firstAttribute="centerY" secondItem="Nya-NJ-Vad" secondAttribute="centerY" id="Joc-nf-FLt"/>
                             <constraint firstItem="ZJS-PE-rGf" firstAttribute="bottom" secondItem="Nya-NJ-Vad" secondAttribute="bottom" constant="410" id="LNy-On-aCX"/>
                             <constraint firstItem="apl-yd-r65" firstAttribute="centerY" secondItem="Nya-NJ-Vad" secondAttribute="centerY" id="M3e-bT-PMX"/>
@@ -366,6 +367,8 @@
                             <constraint firstItem="Nya-NJ-Vad" firstAttribute="top" secondItem="cVO-CM-ldS" secondAttribute="bottom" constant="10" id="TtB-Mt-JrV"/>
                             <constraint firstItem="ZJS-PE-rGf" firstAttribute="trailing" secondItem="cVO-CM-ldS" secondAttribute="trailing" constant="42" id="V1r-yG-Kjp"/>
                             <constraint firstItem="bRo-0Y-WvQ" firstAttribute="baseline" secondItem="Kl4-bt-kVW" secondAttribute="baseline" id="ZXi-Z4-VHE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cVO-CM-ldS" secondAttribute="trailing" constant="26" id="Zaj-JR-yRF"/>
+                            <constraint firstItem="cVO-CM-ldS" firstAttribute="leading" secondItem="kSV-ua-2at" secondAttribute="leadingMargin" constant="59" id="afa-Ep-EJz"/>
                             <constraint firstItem="bRo-0Y-WvQ" firstAttribute="top" secondItem="cVO-CM-ldS" secondAttribute="bottom" constant="11" id="dSU-2Y-cpb"/>
                             <constraint firstItem="cVO-CM-ldS" firstAttribute="top" secondItem="eoY-z2-Q1b" secondAttribute="centerY" id="eFv-Vs-Zik"/>
                             <constraint firstItem="Nya-NJ-Vad" firstAttribute="leading" secondItem="cVO-CM-ldS" secondAttribute="leading" id="eQ6-8n-gHJ"/>
@@ -375,7 +378,9 @@
                             <constraint firstItem="0N8-mu-IuT" firstAttribute="centerY" secondItem="Nya-NJ-Vad" secondAttribute="centerY" id="uFz-Vp-rQR"/>
                             <constraint firstItem="iUo-of-iqb" firstAttribute="top" secondItem="Zf5-w4-nOR" secondAttribute="top" id="ugX-dt-6bz"/>
                             <constraint firstItem="Kl4-bt-kVW" firstAttribute="baseline" secondItem="0N8-mu-IuT" secondAttribute="baseline" id="ujx-zg-ulc"/>
+                            <constraint firstItem="cVO-CM-ldS" firstAttribute="top" secondItem="Zf5-w4-nOR" secondAttribute="bottom" constant="9" id="unb-ra-INI"/>
                             <constraint firstItem="apl-yd-r65" firstAttribute="top" secondItem="Nya-NJ-Vad" secondAttribute="top" id="vaG-qA-Rzn"/>
+                            <constraint firstItem="cVO-CM-ldS" firstAttribute="top" secondItem="kSV-ua-2at" secondAttribute="topMargin" constant="40" id="waN-Qh-r6m"/>
                             <constraint firstItem="Vmq-Ud-2aB" firstAttribute="top" secondItem="Nya-NJ-Vad" secondAttribute="top" id="zDH-eT-62o"/>
                         </constraints>
                     </view>

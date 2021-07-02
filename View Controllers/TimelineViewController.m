@@ -111,7 +111,7 @@
     
     NSString *URLString = tweet.user.profilePicture;
     NSURL *url = [NSURL URLWithString:URLString];
-    //NSData *urlData = [NSData dataWithContentsOfURL:url];
+   
     [cell.profImageView setImageWithURL:url];
 
     [cell updateTweet:tweet];
