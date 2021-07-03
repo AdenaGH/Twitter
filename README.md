@@ -53,10 +53,10 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-! [ ](https://github.com/AdenaGH/Twitter/blob/main/ezgif.com-gif-maker%20(2).gif)
-! [ ](https://github.com/AdenaGH/Twitter/blob/main/ezgif.com-gif-maker%20(3).gif)
-! [](https://github.com/AdenaGH/Twitter/blob/main/ezgif.com-gif-maker%20(4).gif)
-! [](https://github.com/AdenaGH/Twitter/blob/main/ezgif.com-gif-maker%20(5).gif)
+![ ](https://github.com/AdenaGH/Twitter/blob/main/ezgif.com-gif-maker%20(2).gif)
+![ ](https://github.com/AdenaGH/Twitter/blob/main/ezgif.com-gif-maker%20(3).gif)
+![](https://github.com/AdenaGH/Twitter/blob/main/ezgif.com-gif-maker%20(4).gif)
+![](https://github.com/AdenaGH/Twitter/blob/main/ezgif.com-gif-maker%20(5).gif)
 
 GIF created with ez-gif
 
