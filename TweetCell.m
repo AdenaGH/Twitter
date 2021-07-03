@@ -31,7 +31,6 @@
         self.tweet = tweet;
     
     self.authorLabel.text = [@"@" stringByAppendingString: tweet.user.screenName];
-    NSString * testDate = tweet.createdAtString;
     self.dateLabel.text = tweet.createdAtString;
     self.tweetBodyLabel.text = tweet.text;
     self.likesLabel.text = [NSString stringWithFormat: @"%d",tweet.favoriteCount];
